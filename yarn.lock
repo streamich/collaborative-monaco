@@ -5707,6 +5707,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"collaborative-editor@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "collaborative-editor@npm:1.0.1"
+  dependencies:
+    fast-diff: "npm:^1.3.0"
+  peerDependencies:
+    json-joy: "*"
+    tslib: 2
+  checksum: d51d11cc636a5ea06fb75f06c57f0f2ee9aa32411bff23371d0fe5512b3c7744dd48eaf6e1411f1ec5b997c7b0250c614fa7e06e6321a2cbb8fe3f69adcbdca1
+  languageName: node
+  linkType: hard
+
 "collaborative-monaco@workspace:.":
   version: 0.0.0-use.local
   resolution: "collaborative-monaco@workspace:."
@@ -5726,6 +5738,7 @@ __metadata:
     "@types/react": "npm:^18.2.39"
     "@typescript-eslint/eslint-plugin": "npm:^6.13.1"
     "@typescript-eslint/parser": "npm:^6.13.1"
+    collaborative-editor: "npm:^1.0.1"
     eslint: "npm:^8.54.0"
     eslint-plugin-react: "npm:^7.33.2"
     eslint-plugin-storybook: "npm:^0.6.15"
