@@ -1,57 +1,68 @@
 import type {SimpleChange, EditorFacade, Selection} from 'collaborative-editor';
 import type {StrApi} from 'json-joy/es2020/json-crdt';
+import type * as monaco from 'monaco-editor';
 
 // API:
 // model.getOffsetAt(pos)
 // model.getPositionAt(offset)
 // model.applyEdits([{ range, text: insert }])
-// model.getValue()
-// model.setValue(text)
 // model..onDidChangeContent(listener)
 // model.onWillDispose(listener)
 // editor.getSelection()
 // editor.onDidChangeCursorSelection(listener)
-// editor.getMode()
+// editor.getModel()
 // editor.setSelection(selection)
 // editor.deltaDecorations(oldDecorations, newDecorations)
-
 export class MonacoEditorFacade implements EditorFacade {
   public selection!: Selection;
-  public onchange?: (change: SimpleChange | void) => void;
+  public onchange?: (changes: SimpleChange[] | void) => void;
   public onselection?: () => void;
+
+  private readonly modelChangeDisposable: monaco.IDisposable;
 
   constructor(
     protected readonly str: StrApi,
-    protected readonly input: HTMLInputElement | HTMLTextAreaElement,
+    protected readonly editor: monaco.editor.IStandaloneCodeEditor,
   ) {
-    throw new Error('Not implemented');
+    this.modelChangeDisposable = editor.onDidChangeModelContent((event) => {
+      const rawChanges = event.changes.sort(({rangeOffset: offset1}, {rangeOffset: offset2}) => offset2 - offset1);
+      const changes: SimpleChange[] = [];
+      const length = rawChanges.length;
+      for (let i = 0; i < length; i++) {
+        const {rangeOffset, rangeLength, text} = rawChanges[i];
+        changes.push([rangeOffset, rangeLength, text]);
+      }
+      console.log(changes);
+      this.onchange?.(changes);
+    });
   }
 
   public get(): string {
-    throw new Error('Not implemented');
+    return this.editor.getValue();
   }
 
   public getLength(): number {
-    throw new Error('Not implemented');
+    return this.editor.getModel()!.getValueLength();
   }
 
   public set(text: string): void {
-    throw new Error('Not implemented');
+    this.editor.setValue(text);
   }
 
   public getSelection(): [number, number, -1 | 0 | 1] | null {
-    throw new Error('Not implemented');
+    console.log('getSelection');
+    return null;
   }
 
   public setSelection(start: number, end: number, direction: -1 | 0 | 1): void {
-    throw new Error('Not implemented');
+
   }
 
   protected createChange(event: InputEvent): SimpleChange | undefined {
-    throw new Error('Not implemented');
+    return undefined;
   }
 
   public dispose(): void {
-    throw new Error('Not implemented');
+    this.modelChangeDisposable.dispose();
   }
 }
