@@ -9,9 +9,7 @@ export class MonacoEditorFacade implements EditorFacade {
   private readonly modelChangeDisposable: monaco.IDisposable;
   private readonly selectionDisposable: monaco.IDisposable;
 
-  constructor(
-    protected readonly editor: monaco.editor.IStandaloneCodeEditor,
-  ) {
+  constructor(protected readonly editor: monaco.editor.IStandaloneCodeEditor) {
     this.modelChangeDisposable = editor.onDidChangeModelContent((event) => {
       const rawChanges = event.changes.sort((c1, c2) => c2.rangeOffset - c1.rangeOffset);
       const changes: SimpleChange[] = [];
@@ -70,7 +68,7 @@ export class MonacoEditorFacade implements EditorFacade {
     const editor = this.editor;
     const model = editor.getModel();
     if (!model) return;
-    let startPosition = model.getPositionAt(start)
+    let startPosition = model.getPositionAt(start);
     let endPosition = model.getPositionAt(end);
     if (direction === -1) [startPosition, endPosition] = [endPosition, startPosition];
     const selection = new monaco.Selection(

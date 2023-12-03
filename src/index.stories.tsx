@@ -9,20 +9,20 @@ interface EditorProps {
 }
 
 const Editor: React.FC<EditorProps> = ({src = ''}) => {
-	const divEl = React.useRef<HTMLDivElement>(null);
-  const [model, clone] = React.useMemo(() => {
+  const divEl = React.useRef<HTMLDivElement>(null);
+  const [model] = React.useMemo(() => {
     const model = Model.withLogicalClock();
     model.api.root({text: src});
     return [model, model.clone()];
   }, []);
-	React.useEffect(() => {
-		if (!divEl.current) return;
+  React.useEffect(() => {
+    if (!divEl.current) return;
     const editor = monaco.editor.create(divEl.current, {});
     const unbind = bind(model.api.str(['text']), editor, true);
-		return () => {
-			unbind();
-		};
-	}, [model]);
+    return () => {
+      unbind();
+    };
+  }, [model]);
   React.useSyncExternalStore(model.api.subscribe, () => model.tick);
 
   return (
