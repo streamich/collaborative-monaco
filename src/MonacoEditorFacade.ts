@@ -1,5 +1,4 @@
 import type {SimpleChange, EditorFacade, Selection} from 'collaborative-editor';
-import type {StrApi} from 'json-joy/es2020/json-crdt';
 import * as monaco from 'monaco-editor';
 
 export class MonacoEditorFacade implements EditorFacade {
@@ -11,7 +10,6 @@ export class MonacoEditorFacade implements EditorFacade {
   private readonly selectionDisposable: monaco.IDisposable;
 
   constructor(
-    protected readonly str: StrApi,
     protected readonly editor: monaco.editor.IStandaloneCodeEditor,
   ) {
     this.modelChangeDisposable = editor.onDidChangeModelContent((event) => {
