@@ -48,7 +48,7 @@
     "crdt"
   ],
   "dependencies": {
-    "collaborative-editor": "^2.0.0",
+    "collaborative-editor": "^2.1.0",
     "fast-diff": "^1.3.0"
   },
   "peerDependencies": {
