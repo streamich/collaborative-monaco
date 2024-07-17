@@ -1,25 +1,39 @@
 import * as React from 'react';
-import {Model} from 'json-joy/es2020/json-crdt';
+import {Model, s} from 'json-joy/lib/json-crdt';
 import type {Meta, StoryObj} from '@storybook/react';
 import * as monaco from 'monaco-editor';
 import {bind} from '.';
+import {monarchLatexLang} from './__tests__/latexLang';
 
 interface EditorProps {
   src: string;
 }
 
-const Editor: React.FC<EditorProps> = ({src = ''}) => {
+const Editor: React.FC<EditorProps> = ({
+  src = `\\documentclass[12pt]{article}
+\\usepackage{lingmacros}
+\\usepackage{tree-dvips}
+\\begin{document}
+
+\\section*{Notes for My Paper}
+`,
+}) => {
   const divEl = React.useRef<HTMLDivElement>(null);
   const editorRef = React.useRef<monaco.editor.IStandaloneCodeEditor>(null);
   const [model, clone] = React.useMemo(() => {
-    const model = Model.withLogicalClock();
-    model.api.root({text: src});
+    const model = Model.create(s.str(src));
     return [model, model.clone()];
   }, []);
   React.useEffect(() => {
     if (!divEl.current) return;
-    const editor = ((editorRef as any).current = monaco.editor.create(divEl.current, {}));
-    const unbind = bind(model.api.str(['text']), editor, true);
+    monaco.languages.register({
+      id: 'latex',
+    });
+    monaco.languages.setMonarchTokensProvider('latex', monarchLatexLang as any);
+    const editor = ((editorRef as any).current = monaco.editor.create(divEl.current, {
+      language: 'javascript',
+    }));
+    const unbind = bind(model.s.toApi(), editor, true);
     return () => {
       unbind();
     };
@@ -52,6 +66,18 @@ const Editor: React.FC<EditorProps> = ({src = ''}) => {
             }, 2000);
           }}
         >
+          Append "?" to editor after 2s
+        </button>
+      </div>
+      <div>
+        <button
+          onClick={() => {
+            setTimeout(() => {
+              const str = model.s.toApi();
+              str.ins(str.length(), '?');
+            }, 2000);
+          }}
+        >
           Append "?" to model after 2s
         </button>
       </div>
@@ -60,6 +86,18 @@ const Editor: React.FC<EditorProps> = ({src = ''}) => {
           onClick={() => {
             setTimeout(() => {
               insert('1. ', 0);
+            }, 2000);
+          }}
+        >
+          Prepend "1. " to editor after 2s
+        </button>
+      </div>
+      <div>
+        <button
+          onClick={() => {
+            setTimeout(() => {
+              const str = model.s.toApi();
+              str.ins(0, '1. ');
             }, 2000);
           }}
         >
@@ -93,7 +131,5 @@ const meta: Meta<EditorProps> = {
 export default meta;
 
 export const Primary: StoryObj<typeof meta> = {
-  args: {
-    src: 'gl',
-  },
+  args: {},
 };

@@ -1,4 +1,4 @@
-import type {SimpleChange, EditorFacade, Selection} from 'collaborative-editor';
+import type {SimpleChange, EditorFacade, Selection, EditorSelection} from 'collaborative-editor';
 import * as monaco from 'monaco-editor';
 
 export class MonacoEditorFacade implements EditorFacade {
@@ -20,7 +20,7 @@ export class MonacoEditorFacade implements EditorFacade {
       }
       this.onchange?.(changes);
     });
-    this.selectionDisposable = editor.onDidChangeCursorSelection(() => this.onchange?.());
+    this.selectionDisposable = editor.onDidChangeCursorSelection(() => this.onselection?.());
   }
 
   public get(): string {
@@ -52,7 +52,7 @@ export class MonacoEditorFacade implements EditorFacade {
     this.editor.getModel()?.applyEdits([{range, text: ''}]);
   }
 
-  public getSelection(): [number, number, -1 | 0 | 1] | null {
+  public getSelection(): EditorSelection | null {
     const editor = this.editor;
     const selection = editor.getSelection();
     if (!selection) return null;
@@ -61,7 +61,8 @@ export class MonacoEditorFacade implements EditorFacade {
     const start = model.getOffsetAt(selection.getSelectionStart());
     const end = model.getOffsetAt(selection.getPosition());
     const direction = selection.getDirection() === monaco.SelectionDirection.LTR ? 1 : -1;
-    return [start, end, direction];
+    const editorSelection: EditorSelection = [start, end, direction];
+    return editorSelection;
   }
 
   public setSelection(start: number, end: number, direction: -1 | 0 | 1): void {
