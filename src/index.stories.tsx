@@ -3,12 +3,19 @@ import {Model, s} from 'json-joy/lib/json-crdt';
 import type {Meta, StoryObj} from '@storybook/react';
 import * as monaco from 'monaco-editor';
 import {bind} from '.';
+import {monarchLatexLang} from './__tests__/latexLang';
 
 interface EditorProps {
   src: string;
 }
 
-const Editor: React.FC<EditorProps> = ({src = ''}) => {
+const Editor: React.FC<EditorProps> = ({src = `\\documentclass[12pt]{article}
+\\usepackage{lingmacros}
+\\usepackage{tree-dvips}
+\\begin{document}
+
+\\section*{Notes for My Paper}
+`}) => {
   const divEl = React.useRef<HTMLDivElement>(null);
   const editorRef = React.useRef<monaco.editor.IStandaloneCodeEditor>(null);
   const [model, clone] = React.useMemo(() => {
@@ -17,7 +24,13 @@ const Editor: React.FC<EditorProps> = ({src = ''}) => {
   }, []);
   React.useEffect(() => {
     if (!divEl.current) return;
-    const editor = ((editorRef as any).current = monaco.editor.create(divEl.current, {}));
+    monaco.languages.register({
+      id: 'latex',
+    });
+    monaco.languages.setMonarchTokensProvider('latex', monarchLatexLang as any);
+    const editor = ((editorRef as any).current = monaco.editor.create(divEl.current, {
+      language: 'javascript',
+    }));
     const unbind = bind(model.s.toApi(), editor, true);
     return () => {
       unbind();
@@ -58,7 +71,7 @@ const Editor: React.FC<EditorProps> = ({src = ''}) => {
         <button
           onClick={() => {
             setTimeout(() => {
-              const str = model.s.toApi()
+              const str = model.s.toApi();
               str.ins(str.length(), '?');
             }, 2000);
           }}
@@ -81,7 +94,7 @@ const Editor: React.FC<EditorProps> = ({src = ''}) => {
         <button
           onClick={() => {
             setTimeout(() => {
-              const str = model.s.toApi()
+              const str = model.s.toApi();
               str.ins(0, '1. ');
             }, 2000);
           }}
@@ -117,6 +130,5 @@ export default meta;
 
 export const Primary: StoryObj<typeof meta> = {
   args: {
-    src: 'gl',
   },
 };
