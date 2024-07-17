@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Model} from 'json-joy/es2020/json-crdt';
+import {Model} from 'json-joy/lib/json-crdt';
 import type {Meta, StoryObj} from '@storybook/react';
 import * as monaco from 'monaco-editor';
 import {bind} from '.';
