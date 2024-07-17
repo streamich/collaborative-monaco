@@ -9,13 +9,15 @@ interface EditorProps {
   src: string;
 }
 
-const Editor: React.FC<EditorProps> = ({src = `\\documentclass[12pt]{article}
+const Editor: React.FC<EditorProps> = ({
+  src = `\\documentclass[12pt]{article}
 \\usepackage{lingmacros}
 \\usepackage{tree-dvips}
 \\begin{document}
 
 \\section*{Notes for My Paper}
-`}) => {
+`,
+}) => {
   const divEl = React.useRef<HTMLDivElement>(null);
   const editorRef = React.useRef<monaco.editor.IStandaloneCodeEditor>(null);
   const [model, clone] = React.useMemo(() => {
@@ -129,6 +131,5 @@ const meta: Meta<EditorProps> = {
 export default meta;
 
 export const Primary: StoryObj<typeof meta> = {
-  args: {
-  },
+  args: {},
 };
