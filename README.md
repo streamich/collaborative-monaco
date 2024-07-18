@@ -18,21 +18,42 @@ Usage:
 ```ts
 import {bind} from 'collaborative-monaco';
 import * as monaco from 'monaco-editor';
-import {Model} from 'json-joy/es2020/json-crdt';
+import {Model} from 'json-joy/lib/json-crdt';
 
-const model = Model.withLogicalClock();
-model.api.root({text: ''});
-const str = model.api.str(['text']);
+const model = Model.create(s.str('hello'));
 
 const editor = monaco.editor.create(div, {
   value: 'hello world',
 });
 
-const unbind = bind(str, editor);
+const unbind = bind(model.s.toApi(), editor);
 
 // When done, unbind the binding.
 binding.unbind();
 ```
+
+
+## React Usage
+
+Installation:
+
+```
+npm install json-joy monaco-editor collaborative-monaco react react-dom
+```
+
+Usage:
+
+```tsx
+import {Model, s} from 'json-joy/lib/json-crdt';
+import {CollaborativeMonaco} from 'collaborative-monaco/lib/CollaborativeMonaco';
+
+const model = Model.create(s.str('hello'));
+
+const MyComponent = () => {
+  return <CollaborativeMonaco str={model.s.toApi()} />
+};
+```
+
 
 
 ## Preview
