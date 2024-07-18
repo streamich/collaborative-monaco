@@ -2,8 +2,13 @@ import * as React from 'react';
 import {Model, s} from 'json-joy/lib/json-crdt';
 import type {Meta, StoryObj} from '@storybook/react';
 import * as monaco from 'monaco-editor';
-import {bind} from '.';
 import {monarchLatexLang} from './__tests__/latexLang';
+import {CollaborativeMonaco} from './CollaborativeMonaco';
+
+monaco.languages.register({
+  id: 'latex',
+});
+monaco.languages.setMonarchTokensProvider('latex', monarchLatexLang as any);
 
 interface EditorProps {
   src: string;
@@ -18,26 +23,11 @@ const Editor: React.FC<EditorProps> = ({
 \\section*{Notes for My Paper}
 `,
 }) => {
-  const divEl = React.useRef<HTMLDivElement>(null);
   const editorRef = React.useRef<monaco.editor.IStandaloneCodeEditor>(null);
   const [model, clone] = React.useMemo(() => {
     const model = Model.create(s.str(src));
     return [model, model.clone()];
   }, []);
-  React.useEffect(() => {
-    if (!divEl.current) return;
-    monaco.languages.register({
-      id: 'latex',
-    });
-    monaco.languages.setMonarchTokensProvider('latex', monarchLatexLang as any);
-    const editor = ((editorRef as any).current = monaco.editor.create(divEl.current, {
-      language: 'javascript',
-    }));
-    const unbind = bind(model.s.toApi(), editor, true);
-    return () => {
-      unbind();
-    };
-  }, [model]);
   React.useSyncExternalStore(model.api.subscribe, () => model.tick);
 
   const insert = (text: string, position?: number) => {
@@ -54,7 +44,20 @@ const Editor: React.FC<EditorProps> = ({
 
   return (
     <div>
-      <div className="Editor" ref={divEl} style={{width: 800, height: 250, border: '1px solid #ddd'}} />
+      <CollaborativeMonaco
+        str={model.s.toApi()}
+        options={{
+          language: 'latex',
+        }}
+        style={{
+          width: 800,
+          height: 250,
+          border: '1px solid #aaa',
+        }}
+        onEditor={(editor) => {
+          (editorRef as any).current = editor;
+        }}
+      />
       <div>
         <button onClick={() => insert('!')}>Append "!" to editor</button>
       </div>

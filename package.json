@@ -48,7 +48,8 @@
     "crdt"
   ],
   "dependencies": {
-    "collaborative-editor": "^2.2.0"
+    "collaborative-editor": "^2.2.0",
+    "react-use": "^17.5.0"
   },
   "peerDependencies": {
     "json-joy": "*",
