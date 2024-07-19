@@ -40,6 +40,7 @@ export const CollaborativeMonaco: React.FC<CollaborativeMonacoProps> = ({
     const unbind = bind(str, editor, true);
     return () => {
       unbind();
+      editor.dispose();
     };
   }, [str, _editor]);
 
