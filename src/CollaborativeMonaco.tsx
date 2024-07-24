@@ -1,11 +1,11 @@
 import * as React from 'react';
-import {StrApi} from 'json-joy/lib/json-crdt';
 import * as monaco from 'monaco-editor';
 import useIsomorphicLayoutEffect from 'react-use/lib/useIsomorphicLayoutEffect';
 import {bind} from '.';
+import type {CollaborativeStr} from 'collaborative-editor';
 
 export interface CollaborativeMonacoProps extends React.HTMLAttributes<HTMLDivElement> {
-  str: StrApi;
+  str: () => CollaborativeStr;
   editor?: monaco.editor.IStandaloneCodeEditor;
   options?: monaco.editor.IStandaloneEditorConstructionOptions;
   override?: monaco.editor.IEditorOverrideServices;
@@ -30,7 +30,7 @@ export const CollaborativeMonaco: React.FC<CollaborativeMonacoProps> = ({
       monaco.editor.create(
         divRef.current,
         options ?? {
-          value: str.view(),
+          value: str().view(),
           language: 'javascript',
         },
         override,
@@ -42,7 +42,7 @@ export const CollaborativeMonaco: React.FC<CollaborativeMonacoProps> = ({
       unbind();
       editor.dispose();
     };
-  }, [str, _editor]);
+  }, [str().api, _editor]);
 
   return <div {...rest} ref={divRef} />;
 };
