@@ -45,7 +45,7 @@ const Editor: React.FC<EditorProps> = ({
   return (
     <div>
       <CollaborativeMonaco
-        str={model.s.toApi()}
+        str={() => model.s.toApi()}
         options={{
           language: 'latex',
         }}
