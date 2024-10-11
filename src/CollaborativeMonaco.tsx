@@ -7,10 +7,7 @@ export interface CollaborativeMonacoProps extends EditorProps {
   str: () => CollaborativeStr;
 }
 
-export const CollaborativeMonaco: React.FC<CollaborativeMonacoProps> = ({
-  str,
-  ...rest
-}) => {
+export const CollaborativeMonaco: React.FC<CollaborativeMonacoProps> = ({str, ...rest}) => {
   const unbind = React.useRef<(() => void) | null>(null);
   React.useEffect(() => {
     return () => {
