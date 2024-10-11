@@ -56,12 +56,14 @@
   "peerDependencies": {
     "json-joy": "*",
     "monaco-editor": "*",
+    "@monaco-editor/react": "*",
     "tslib": "2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
+    "@monaco-editor/react": "^4.6.0",
     "@storybook/addon-essentials": "^7.6.2",
     "@storybook/addon-interactions": "^7.6.2",
     "@storybook/addon-links": "^7.6.2",

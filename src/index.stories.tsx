@@ -45,16 +45,12 @@ const Editor: React.FC<EditorProps> = ({
   return (
     <div>
       <CollaborativeMonaco
+        height={'200px'}
         str={() => model.s.toApi()}
         options={{
           language: 'latex',
         }}
-        style={{
-          width: 800,
-          height: 250,
-          border: '1px solid #aaa',
-        }}
-        onEditor={(editor) => {
+        onMount={(editor) => {
           (editorRef as any).current = editor;
         }}
       />

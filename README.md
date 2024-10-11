@@ -38,7 +38,7 @@ binding.unbind();
 Installation:
 
 ```
-npm install json-joy monaco-editor collaborative-monaco react react-dom
+npm install json-joy monaco-editor collaborative-monaco @monaco-editor/react react react-dom
 ```
 
 Usage:
