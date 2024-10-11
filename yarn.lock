@@ -2140,7 +2140,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jsonjoy.com/base64@npm:^1.1.1":
+"@jsonjoy.com/base64@npm:^1.1.1, @jsonjoy.com/base64@npm:^1.1.2":
   version: 1.1.2
   resolution: "@jsonjoy.com/base64@npm:1.1.2"
   peerDependencies:
@@ -2149,9 +2149,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jsonjoy.com/json-pack@npm:^1.0.2":
-  version: 1.0.4
-  resolution: "@jsonjoy.com/json-pack@npm:1.0.4"
+"@jsonjoy.com/json-expression@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@jsonjoy.com/json-expression@npm:1.0.0"
+  dependencies:
+    "@jsonjoy.com/json-pointer": "npm:^1.0.0"
+    "@jsonjoy.com/util": "npm:^1.3.0"
+  peerDependencies:
+    tslib: 2
+  checksum: 10c0/4b67e02615892a165c6868ac4377536a43818401c72ca25926887983358c739d51f41ad4e57e6dc25a454b28c6b7995a4ae00cf62254cde609495fdeb097168a
+  languageName: node
+  linkType: hard
+
+"@jsonjoy.com/json-pack@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@jsonjoy.com/json-pack@npm:1.1.0"
   dependencies:
     "@jsonjoy.com/base64": "npm:^1.1.1"
     "@jsonjoy.com/util": "npm:^1.1.2"
@@ -2159,16 +2171,52 @@ __metadata:
     thingies: "npm:^1.20.0"
   peerDependencies:
     tslib: 2
-  checksum: 10c0/c06e57c33d3c18ab31af163e04f77cb759f68386c41375d1e1bd6c28beb1a3cc82217cc3b26f4c94b7385ed28a61e59b01498cf4cec562fd9e464b17eab0cf16
+  checksum: 10c0/cdf5cb567a7f2e703d4966a3e3a5f7f7b54ee40a2102aa0ede5c79bcf2060c8465d82f39de8583db4cf1d8415bec8e57dfb1156ef663567b846cdea45813d9d1
   languageName: node
   linkType: hard
 
-"@jsonjoy.com/util@npm:^1.1.0, @jsonjoy.com/util@npm:^1.1.2":
+"@jsonjoy.com/json-pointer@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@jsonjoy.com/json-pointer@npm:1.0.0"
+  dependencies:
+    "@jsonjoy.com/util": "npm:^1.3.0"
+  peerDependencies:
+    tslib: 2
+  checksum: 10c0/be9b15505a63e8e59e87e565b4a8ab709a944cf9a8ca295b7c6c13c5e947925c485daa06be8a607fbc98978972f133841d457626d9b3c218c7f056c677c15282
+  languageName: node
+  linkType: hard
+
+"@jsonjoy.com/json-type@npm:^1.0.0":
+  version: 1.1.0
+  resolution: "@jsonjoy.com/json-type@npm:1.1.0"
+  dependencies:
+    "@jsonjoy.com/json-expression": "npm:^1.0.0"
+    "@jsonjoy.com/json-pack": "npm:^1.1.0"
+    "@jsonjoy.com/util": "npm:^1.4.0"
+    sonic-forest: "npm:^1.0.3"
+    tree-dump: "npm:^1.0.2"
+  peerDependencies:
+    rxjs: "*"
+    tslib: 2
+  checksum: 10c0/98fa3705f997334ec3977897b01eacc9856f281933819449fd12c66b88b279b3e3305ed9ba4c4925fd6aab9f63ea2b99ad706c53d985f8f4bf6b9eec77b3c1e2
+  languageName: node
+  linkType: hard
+
+"@jsonjoy.com/util@npm:^1.1.2":
   version: 1.3.0
   resolution: "@jsonjoy.com/util@npm:1.3.0"
   peerDependencies:
     tslib: 2
   checksum: 10c0/892bbe2073bb20bf392dd4dfed77881c6f7ae6a0cc5802e537fe3cbeeadde7738de5369f2d4529156efc5e98d9d43b15c85906ddb79140e322f1b26eaaf854df
+  languageName: node
+  linkType: hard
+
+"@jsonjoy.com/util@npm:^1.3.0, @jsonjoy.com/util@npm:^1.4.0":
+  version: 1.5.0
+  resolution: "@jsonjoy.com/util@npm:1.5.0"
+  peerDependencies:
+    tslib: 2
+  checksum: 10c0/0065ae12c4108d8aede01a479c8d2b5a39bce99e9a449d235befc753f57e8385d9c1115720529f26597840b7398d512898155423d9859fd638319fb0c827365d
   languageName: node
   linkType: hard
 
@@ -5922,15 +5970,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"collaborative-editor@npm:^2.5.0":
-  version: 2.6.0
-  resolution: "collaborative-editor@npm:2.6.0"
+"collaborative-editor@npm:^2.8.0":
+  version: 2.8.0
+  resolution: "collaborative-editor@npm:2.8.0"
   dependencies:
     fast-diff: "npm:^1.3.0"
   peerDependencies:
     json-joy: "*"
     tslib: 2
-  checksum: 10c0/c31dce74b7d33fded0f38652a4789296575a53d2538f7eb90614e244f5d74da526f49e827344b7d3ea1657ad8b0f68722b738067fc96138b35c61dd1e9f1db55
+  checksum: 10c0/a865597853b92ebbff2246b29cf4c68e45029213d7989d1e97ee59086302d2eab78a06b219d628f664d634392cdbe77afe99f1f0e08edd8b5f7afbd2f147c877
   languageName: node
   linkType: hard
 
@@ -5953,22 +6001,22 @@ __metadata:
     "@types/react": "npm:^18.3.3"
     "@typescript-eslint/eslint-plugin": "npm:^6.13.1"
     "@typescript-eslint/parser": "npm:^6.13.1"
-    collaborative-editor: "npm:^2.5.0"
+    collaborative-editor: "npm:^2.8.0"
     eslint: "npm:^8.54.0"
     eslint-plugin-react: "npm:^7.33.2"
     eslint-plugin-storybook: "npm:^0.6.15"
     jest: "npm:^29.7.0"
-    json-joy: "npm:^16.18.1"
-    monaco-editor: "npm:^0.50.0"
-    prettier: "npm:^3.1.0"
+    json-joy: "npm:^17.2.0"
+    monaco-editor: "npm:^0.52.0"
+    prettier: "npm:^3.3.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-use: "npm:^17.5.1"
-    rimraf: "npm:^5.0.5"
+    rimraf: "npm:^6.0.1"
     storybook: "npm:^7.6.2"
     ts-jest: "npm:^29.1.1"
-    tslib: "npm:^2.6.2"
-    typescript: "npm:^5.3.2"
+    tslib: "npm:^2.7.0"
+    typescript: "npm:^5.6.3"
   peerDependencies:
     json-joy: "*"
     monaco-editor: "*"
@@ -8040,7 +8088,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^10.0.0, glob@npm:^10.2.2, glob@npm:^10.3.10, glob@npm:^10.3.7":
+"glob@npm:^10.0.0, glob@npm:^10.2.2, glob@npm:^10.3.10":
   version: 10.4.5
   resolution: "glob@npm:10.4.5"
   dependencies:
@@ -8053,6 +8101,22 @@ __metadata:
   bin:
     glob: dist/esm/bin.mjs
   checksum: 10c0/19a9759ea77b8e3ca0a43c2f07ecddc2ad46216b786bb8f993c445aee80d345925a21e5280c7b7c6c59e860a0154b84e4b2b60321fea92cd3c56b4a7489f160e
+  languageName: node
+  linkType: hard
+
+"glob@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "glob@npm:11.0.0"
+  dependencies:
+    foreground-child: "npm:^3.1.0"
+    jackspeak: "npm:^4.0.1"
+    minimatch: "npm:^10.0.0"
+    minipass: "npm:^7.1.2"
+    package-json-from-dist: "npm:^1.0.0"
+    path-scurry: "npm:^2.0.0"
+  bin:
+    glob: dist/esm/bin.mjs
+  checksum: 10c0/419866015d8795258a8ac51de5b9d1a99c72634fc3ead93338e4da388e89773ab21681e494eac0fbc4250b003451ca3110bb4f1c9393d15d14466270094fdb4e
   languageName: node
   linkType: hard
 
@@ -9029,6 +9093,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jackspeak@npm:^4.0.1":
+  version: 4.0.2
+  resolution: "jackspeak@npm:4.0.2"
+  dependencies:
+    "@isaacs/cliui": "npm:^8.0.2"
+  checksum: 10c0/b26039d11c0163a95b1e58851b9ac453cce64ad6d1eb98a00b303ad5eeb761b29d33c9419d1e16c016d3f7151c8edf7df223e6cf93a1907655fd95d6ce85c0de
+  languageName: node
+  linkType: hard
+
 "jake@npm:^10.8.5":
   version: 10.9.2
   resolution: "jake@npm:10.9.2"
@@ -9607,18 +9680,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-joy@npm:^16.18.1":
-  version: 16.20.0
-  resolution: "json-joy@npm:16.20.0"
+"json-joy@npm:^17.2.0":
+  version: 17.2.0
+  resolution: "json-joy@npm:17.2.0"
   dependencies:
-    "@jsonjoy.com/base64": "npm:^1.1.1"
-    "@jsonjoy.com/json-pack": "npm:^1.0.2"
-    "@jsonjoy.com/util": "npm:^1.1.0"
+    "@jsonjoy.com/base64": "npm:^1.1.2"
+    "@jsonjoy.com/json-expression": "npm:^1.0.0"
+    "@jsonjoy.com/json-pack": "npm:^1.1.0"
+    "@jsonjoy.com/json-pointer": "npm:^1.0.0"
+    "@jsonjoy.com/json-type": "npm:^1.0.0"
+    "@jsonjoy.com/util": "npm:^1.4.0"
     arg: "npm:^5.0.2"
     hyperdyperid: "npm:^1.2.0"
-    sonic-forest: "npm:^1.0.2"
-    thingies: "npm:^2.0.0"
-    tree-dump: "npm:^1.0.1"
+    sonic-forest: "npm:^1.0.3"
+    thingies: "npm:^2.1.1"
+    tree-dump: "npm:^1.0.2"
   peerDependencies:
     rxjs: 7
     tslib: 2
@@ -9634,7 +9710,7 @@ __metadata:
     json-pointer: bin/json-pointer.js
     json-pointer-test: bin/json-pointer-test.js
     json-unpack: bin/json-unpack.js
-  checksum: 10c0/fa6d1172357c500775ae69ed2e33a88248dccc67aad9e458f90e361afc4cf3bddd6507bd9e6eef220aca8e6e44437945766c0c020392b03a4986f37120422f73
+  checksum: 10c0/6a9262cb5db3d8612c4879426fbe367921b52bcb88973cf0747f36093f751b49528bdf752ed537640fa1d5f53711110958eb6d266b00f99f784ef75bf2d1a56b
   languageName: node
   linkType: hard
 
@@ -9875,6 +9951,13 @@ __metadata:
   version: 10.4.3
   resolution: "lru-cache@npm:10.4.3"
   checksum: 10c0/ebd04fbca961e6c1d6c0af3799adcc966a1babe798f685bb84e6599266599cd95d94630b10262f5424539bc4640107e8a33aa28585374abf561d30d16f4b39fb
+  languageName: node
+  linkType: hard
+
+"lru-cache@npm:^11.0.0":
+  version: 11.0.1
+  resolution: "lru-cache@npm:11.0.1"
+  checksum: 10c0/8bad6603dc67eb5b03520fba05bce5df6473dbba58ac4c6067ed088d29225a0a04416bb1462acd8c1f819d1fbf37920446a1c36bafd9c384bcc54cee0d3b697a
   languageName: node
   linkType: hard
 
@@ -10142,6 +10225,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimatch@npm:^10.0.0":
+  version: 10.0.1
+  resolution: "minimatch@npm:10.0.1"
+  dependencies:
+    brace-expansion: "npm:^2.0.1"
+  checksum: 10c0/e6c29a81fe83e1877ad51348306be2e8aeca18c88fdee7a99df44322314279e15799e41d7cb274e4e8bb0b451a3bc622d6182e157dfa1717d6cda75e9cd8cd5d
+  languageName: node
+  linkType: hard
+
 "minimatch@npm:^3.0.2, minimatch@npm:^3.0.4, minimatch@npm:^3.0.5, minimatch@npm:^3.1.1, minimatch@npm:^3.1.2":
   version: 3.1.2
   resolution: "minimatch@npm:3.1.2"
@@ -10299,10 +10391,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"monaco-editor@npm:^0.50.0":
-  version: 0.50.0
-  resolution: "monaco-editor@npm:0.50.0"
-  checksum: 10c0/79189c926c2fc1e3a3b9118e80911599bf18108018fe176c7b47a27b4856b544129f9a59c9a5c321d154d6a30a8d9c231684246e9382f4f18329a548d11cb4d6
+"monaco-editor@npm:^0.52.0":
+  version: 0.52.0
+  resolution: "monaco-editor@npm:0.52.0"
+  checksum: 10c0/962c75272568eb1556835f0097da2c7768bffe1116b252bb8b3aefd34f31e2dc46baa27e3911c0a6617bf556e6d6802e6e9f0f5548edd832c33872a8a0c146d3
   languageName: node
   linkType: hard
 
@@ -10913,6 +11005,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"path-scurry@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "path-scurry@npm:2.0.0"
+  dependencies:
+    lru-cache: "npm:^11.0.0"
+    minipass: "npm:^7.1.2"
+  checksum: 10c0/3da4adedaa8e7ef8d6dc4f35a0ff8f05a9b4d8365f2b28047752b62d4c1ad73eec21e37b1579ef2d075920157856a3b52ae8309c480a6f1a8bbe06ff8e52b33c
+  languageName: node
+  linkType: hard
+
 "path-to-regexp@npm:0.1.7":
   version: 0.1.7
   resolution: "path-to-regexp@npm:0.1.7"
@@ -11131,7 +11233,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.1.0":
+"prettier@npm:^3.3.3":
   version: 3.3.3
   resolution: "prettier@npm:3.3.3"
   bin:
@@ -11934,14 +12036,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^5.0.5":
-  version: 5.0.9
-  resolution: "rimraf@npm:5.0.9"
+"rimraf@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "rimraf@npm:6.0.1"
   dependencies:
-    glob: "npm:^10.3.7"
+    glob: "npm:^11.0.0"
+    package-json-from-dist: "npm:^1.0.0"
   bin:
     rimraf: dist/esm/bin.mjs
-  checksum: 10c0/87374682492b9e64de9c6fcbf2c8f209c7a2cd0e9749b3732eef8a62c6f859a9ed996d46f662d9ad5dd38c2c469f8e88de56b6c509026070ee3f06369cac1bc8
+  checksum: 10c0/b30b6b072771f0d1e73b4ca5f37bb2944ee09375be9db5f558fcd3310000d29dfcfa93cf7734d75295ad5a7486dc8e40f63089ced1722a664539ffc0c3ece8c6
   languageName: node
   linkType: hard
 
@@ -12259,7 +12362,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sonic-forest@npm:^1.0.2":
+"sonic-forest@npm:^1.0.3":
   version: 1.0.3
   resolution: "sonic-forest@npm:1.0.3"
   dependencies:
@@ -12855,12 +12958,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"thingies@npm:^2.0.0":
-  version: 2.1.1
-  resolution: "thingies@npm:2.1.1"
+"thingies@npm:^2.1.1":
+  version: 2.4.0
+  resolution: "thingies@npm:2.4.0"
   peerDependencies:
     tslib: ^2
-  checksum: 10c0/573a84a11248619b6f53d5226b90b3489b01cfc7f5fa6d37a79e91c3678e247ba981cf21760879ab8c5af58b0a225fa0b773387034c38e6e12061bb1ca1e33a6
+  checksum: 10c0/e92e347cd8ab4df2801270df679b5447b8a2412e6cde3f80c493bad98f9d26e222fa29fa85c344c8fe146b70738b055351050d57b5741d9052c39c269dd1e2f4
   languageName: node
   linkType: hard
 
@@ -12939,7 +13042,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tree-dump@npm:^1.0.0, tree-dump@npm:^1.0.1":
+"tree-dump@npm:^1.0.0, tree-dump@npm:^1.0.2":
   version: 1.0.2
   resolution: "tree-dump@npm:1.0.2"
   peerDependencies:
@@ -13015,10 +13118,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.6.2":
+"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.4.0":
   version: 2.6.3
   resolution: "tslib@npm:2.6.3"
   checksum: 10c0/2598aef53d9dbe711af75522464b2104724d6467b26a60f2bdac8297d2b5f1f6b86a71f61717384aa8fd897240467aaa7bcc36a0700a0faf751293d1331db39a
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "tslib@npm:2.7.0"
+  checksum: 10c0/469e1d5bf1af585742128827000711efa61010b699cb040ab1800bcd3ccdd37f63ec30642c9e07c4439c1db6e46345582614275daca3e0f4abae29b0083f04a6
   languageName: node
   linkType: hard
 
@@ -13160,23 +13270,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.3.2":
-  version: 5.5.4
-  resolution: "typescript@npm:5.5.4"
+"typescript@npm:^5.6.3":
+  version: 5.6.3
+  resolution: "typescript@npm:5.6.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/422be60f89e661eab29ac488c974b6cc0a660fb2228003b297c3d10c32c90f3bcffc1009b43876a082515a3c376b1eefcce823d6e78982e6878408b9a923199c
+  checksum: 10c0/44f61d3fb15c35359bc60399cb8127c30bae554cd555b8e2b46d68fa79d680354b83320ad419ff1b81a0bdf324197b29affe6cc28988cd6a74d4ac60c94f9799
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.3.2#optional!builtin<compat/typescript>":
-  version: 5.5.4
-  resolution: "typescript@patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"
+"typescript@patch:typescript@npm%3A^5.6.3#optional!builtin<compat/typescript>":
+  version: 5.6.3
+  resolution: "typescript@patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/73409d7b9196a5a1217b3aaad929bf76294d3ce7d6e9766dd880ece296ee91cf7d7db6b16c6c6c630ee5096eccde726c0ef17c7dfa52b01a243e57ae1f09ef07
+  checksum: 10c0/7c9d2e07c81226d60435939618c91ec2ff0b75fbfa106eec3430f0fcf93a584bc6c73176676f532d78c3594fe28a54b36eb40b3d75593071a7ec91301533ace7
   languageName: node
   linkType: hard
 
