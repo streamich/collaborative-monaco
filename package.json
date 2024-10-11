@@ -54,9 +54,9 @@
     "react-use": "^17.5.1"
   },
   "peerDependencies": {
+    "@monaco-editor/react": "*",
     "json-joy": "*",
     "monaco-editor": "*",
-    "@monaco-editor/react": "*",
     "tslib": "2"
   },
   "devDependencies": {
