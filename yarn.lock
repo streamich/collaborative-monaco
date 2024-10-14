@@ -7721,9 +7721,9 @@ __metadata:
   linkType: hard
 
 "flow-parser@npm:0.*":
-  version: 0.248.0
-  resolution: "flow-parser@npm:0.248.0"
-  checksum: 10c0/190bcb5dcd1d6152e49b17ba242867f63d8d10a6995d2d1cb701cc47d0660b3208dea9eb564b0e3293acd118b163f35103463976dbf30ce2731e448628151e91
+  version: 0.248.1
+  resolution: "flow-parser@npm:0.248.1"
+  checksum: 10c0/f8f2dfbc06235527267fe6064c07014e9ba6dd44d6e5e89b2f82091b14c14c13523fd5d8bd6b1ca736bd3403773e9c2b8b95dc58703334dfe72a4bba722c95ad
   languageName: node
   linkType: hard
 
@@ -9625,8 +9625,8 @@ __metadata:
   linkType: hard
 
 "json-joy@npm:^17.2.0":
-  version: 17.2.0
-  resolution: "json-joy@npm:17.2.0"
+  version: 17.3.0
+  resolution: "json-joy@npm:17.3.0"
   dependencies:
     "@jsonjoy.com/base64": "npm:^1.1.2"
     "@jsonjoy.com/json-expression": "npm:^1.0.0"
@@ -9654,7 +9654,7 @@ __metadata:
     json-pointer: bin/json-pointer.js
     json-pointer-test: bin/json-pointer-test.js
     json-unpack: bin/json-unpack.js
-  checksum: 10c0/6a9262cb5db3d8612c4879426fbe367921b52bcb88973cf0747f36093f751b49528bdf752ed537640fa1d5f53711110958eb6d266b00f99f784ef75bf2d1a56b
+  checksum: 10c0/7614dbdc7ee4279fd09a15d2c13ca0dd0327783445517264bbf670a7febe674b3c5c9050395c6ed8a9ea921405b7a9021812651078e16d0f450cdf76ce5ceb1d
   languageName: node
   linkType: hard
 
