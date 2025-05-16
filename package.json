@@ -113,22 +113,6 @@
       "^(\\.{1,2}/.*)\\.js$": "$1"
     }
   },
-  "prettier": {
-    "arrowParens": "always",
-    "printWidth": 120,
-    "tabWidth": 2,
-    "useTabs": false,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "bracketSpacing": false
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "config": {
     "config": {
       "commitizen": {
