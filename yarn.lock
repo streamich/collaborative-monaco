@@ -5937,15 +5937,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"collaborative-editor@npm:^2.8.0":
-  version: 2.8.0
-  resolution: "collaborative-editor@npm:2.8.0"
+"collaborative-editor@npm:^2.9.0":
+  version: 2.9.0
+  resolution: "collaborative-editor@npm:2.9.0"
   dependencies:
-    fast-diff: "npm:^1.3.0"
+    json-joy: "npm:^17.42.0"
   peerDependencies:
-    json-joy: "*"
     tslib: 2
-  checksum: 10c0/a865597853b92ebbff2246b29cf4c68e45029213d7989d1e97ee59086302d2eab78a06b219d628f664d634392cdbe77afe99f1f0e08edd8b5f7afbd2f147c877
+  checksum: 10c0/77755b89c2daa7658ebc43c2279c7ce453790042b2e12b39ac3de97483b87731edae05dccefacb90567943277a754227fc01979f6d82c6568bfc684927672305
   languageName: node
   linkType: hard
 
@@ -5969,7 +5968,7 @@ __metadata:
     "@types/react": "npm:^18.3.3"
     "@typescript-eslint/eslint-plugin": "npm:^6.13.1"
     "@typescript-eslint/parser": "npm:^6.13.1"
-    collaborative-editor: "npm:^2.8.0"
+    collaborative-editor: "npm:^2.9.0"
     eslint: "npm:^8.54.0"
     eslint-plugin-react: "npm:^7.33.2"
     eslint-plugin-storybook: "npm:^0.6.15"
@@ -5979,7 +5978,7 @@ __metadata:
     prettier: "npm:^3.3.3"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
-    react-use: "npm:^17.5.1"
+    react-use: "npm:^17.6.0"
     rimraf: "npm:^6.0.1"
     storybook: "npm:^7.6.2"
     ts-jest: "npm:^29.1.1"
@@ -5987,7 +5986,6 @@ __metadata:
     typescript: "npm:^5.6.3"
   peerDependencies:
     "@monaco-editor/react": "*"
-    json-joy: "*"
     monaco-editor: "*"
     tslib: 2
   languageName: unknown
@@ -7480,13 +7478,6 @@ __metadata:
   version: 3.1.3
   resolution: "fast-deep-equal@npm:3.1.3"
   checksum: 10c0/40dedc862eb8992c54579c66d914635afbec43350afbbe991235fdcb4e3a8d5af1b23ae7e79bef7d4882d0ecee06c3197488026998fb19f72dc95acff1d1b1d0
-  languageName: node
-  linkType: hard
-
-"fast-diff@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "fast-diff@npm:1.3.0"
-  checksum: 10c0/5c19af237edb5d5effda008c891a18a585f74bf12953be57923f17a3a4d0979565fc64dbc73b9e20926b9d895f5b690c618cbb969af0cf022e3222471220ad29
   languageName: node
   linkType: hard
 
@@ -9665,6 +9656,42 @@ __metadata:
   languageName: node
   linkType: hard
 
+"json-joy@npm:^17.42.0":
+  version: 17.42.0
+  resolution: "json-joy@npm:17.42.0"
+  dependencies:
+    "@jsonjoy.com/base64": "npm:^1.1.2"
+    "@jsonjoy.com/json-expression": "npm:^1.0.0"
+    "@jsonjoy.com/json-pack": "npm:^1.1.0"
+    "@jsonjoy.com/json-pointer": "npm:^1.0.0"
+    "@jsonjoy.com/json-type": "npm:^1.0.0"
+    "@jsonjoy.com/util": "npm:^1.6.0"
+    arg: "npm:^5.0.2"
+    hyperdyperid: "npm:^1.2.0"
+    nano-css: "npm:^5.6.2"
+    sonic-forest: "npm:^1.2.0"
+    thingies: "npm:^2.1.1"
+    tree-dump: "npm:^1.0.2"
+    very-small-parser: "npm:^1.12.0"
+  peerDependencies:
+    rxjs: 7
+    tslib: 2
+  peerDependenciesMeta:
+    rxjs:
+      optional: true
+  bin:
+    jj: bin/jj.js
+    json-pack: bin/json-pack.js
+    json-pack-test: bin/json-pack-test.js
+    json-patch: bin/json-patch.js
+    json-patch-test: bin/json-patch-test.js
+    json-pointer: bin/json-pointer.js
+    json-pointer-test: bin/json-pointer-test.js
+    json-unpack: bin/json-unpack.js
+  checksum: 10c0/d015c8c9a92cfe91172311b5eaae7a46e51d91649084331dcdb4573bd3315db0542d4dfa83d5d691ec296cb437434809fd458e754c5710c8e8f1d4c9264658fe
+  languageName: node
+  linkType: hard
+
 "json-parse-even-better-errors@npm:^2.3.0, json-parse-even-better-errors@npm:^2.3.1":
   version: 2.3.1
   resolution: "json-parse-even-better-errors@npm:2.3.1"
@@ -11618,7 +11645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-use@npm:^17.5.1":
+"react-use@npm:^17.6.0":
   version: 17.6.0
   resolution: "react-use@npm:17.6.0"
   dependencies:

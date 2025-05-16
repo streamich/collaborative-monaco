@@ -16,6 +16,7 @@ export const CollaborativeMonaco: React.FC<CollaborativeMonacoProps> = ({str, ..
   }, []);
 
   const handleMount = (editor: any, monaco: any) => {
+    unbind.current?.();
     unbind.current = bind(str, editor, true);
     rest.onMount?.(editor, monaco);
   };

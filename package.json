@@ -50,12 +50,12 @@
     "crdt"
   ],
   "dependencies": {
-    "collaborative-editor": "^2.8.0",
-    "react-use": "^17.5.1"
+    "collaborative-editor": "^2.9.0",
+    "json-joy": "^17.42.0",
+    "react-use": "^17.6.0"
   },
   "peerDependencies": {
     "@monaco-editor/react": "*",
-    "json-joy": "*",
     "monaco-editor": "*",
     "tslib": "2"
   },
