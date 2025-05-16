@@ -1,1 +1,1 @@
-{"v":4,"entries":{"monaco-editor--primary":{"type":"story","id":"monaco-editor--primary","name":"Primary","title":"Monaco Editor","importPath":"./src/index.stories.tsx","tags":["story"]}}}
+{"v":5,"entries":{"monaco-editor--primary":{"type":"story","id":"monaco-editor--primary","name":"Primary","title":"Monaco Editor","importPath":"./src/index.stories.tsx","tags":["dev","test"]}}}
