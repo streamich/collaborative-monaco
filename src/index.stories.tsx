@@ -27,7 +27,7 @@ const Editor: React.FC<EditorProps> = ({
   const [model, clone] = React.useMemo(() => {
     const model = Model.create(s.str(src));
     return [model, model.clone()];
-  }, []);
+  }, [src]);
   React.useSyncExternalStore(model.api.subscribe, () => model.tick);
 
   const insert = (text: string, position?: number) => {
@@ -55,10 +55,13 @@ const Editor: React.FC<EditorProps> = ({
         }}
       />
       <div>
-        <button onClick={() => insert('!')}>Append "!" to editor</button>
+        <button type={'button'} onClick={() => insert('!')}>
+          Append "!" to editor
+        </button>
       </div>
       <div>
         <button
+          type={'button'}
           onClick={() => {
             setTimeout(() => {
               insert('?');
@@ -70,6 +73,7 @@ const Editor: React.FC<EditorProps> = ({
       </div>
       <div>
         <button
+          type={'button'}
           onClick={() => {
             setTimeout(() => {
               const str = model.s.toApi();
@@ -82,6 +86,7 @@ const Editor: React.FC<EditorProps> = ({
       </div>
       <div>
         <button
+          type={'button'}
           onClick={() => {
             setTimeout(() => {
               insert('1. ', 0);
@@ -93,6 +98,7 @@ const Editor: React.FC<EditorProps> = ({
       </div>
       <div>
         <button
+          type={'button'}
           onClick={() => {
             setTimeout(() => {
               const str = model.s.toApi();
@@ -105,6 +111,7 @@ const Editor: React.FC<EditorProps> = ({
       </div>
       <div>
         <button
+          type={'button'}
           onClick={() => {
             setTimeout(() => {
               model.reset(clone);
