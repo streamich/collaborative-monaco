@@ -21,7 +21,7 @@ jobs:
           cache: yarn
       - run: yarn
       - run: yarn lint
-      - run: yarn prettier:check
+      - run: yarn format
       - run: yarn test
       - run: yarn build
       - run: yarn storybook:build --quiet

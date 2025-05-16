@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {bind} from '.';
-import {Editor, EditorProps} from '@monaco-editor/react';
+import {Editor, type EditorProps} from '@monaco-editor/react';
 import type {CollaborativeStr} from 'collaborative-editor';
 
 export interface CollaborativeMonacoProps extends EditorProps {
