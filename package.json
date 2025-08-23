@@ -62,7 +62,7 @@
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.0.0",
     "@chromatic-com/storybook": "^3",
     "@monaco-editor/react": "^4.7.0",
     "@storybook/addon-essentials": "^8.6.13",
